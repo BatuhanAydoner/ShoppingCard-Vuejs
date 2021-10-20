@@ -68,6 +68,11 @@ export default {
   gap: 5px;
 }
 
+.general label {
+  background: white;
+  color: black;
+}
+
 .general label input {
   visibility: hidden !important;
   position: absolute !important;

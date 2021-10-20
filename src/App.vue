@@ -1,6 +1,6 @@
 <template>
   <div id="app">
-    <main-header />
+    <main-header :productCount="selectedProducts.length" />
     <product-card v-for="(product, i) in allProducts" :key="i" :product="product" />
   </div>
 </template>
@@ -18,7 +18,13 @@ export default {
   },
   data() {
     return {
-      allProducts: [...products]
+      allProducts: [...products],
+      selectedProducts: [],
+    }
+  },
+  methods: {
+    adddToChart() {
+      
     }
   },
 }

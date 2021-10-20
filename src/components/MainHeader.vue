@@ -2,17 +2,17 @@
   <div class="header">
     <h1>BatuExpress</h1>
     <transition name="move" appear>
-      <b-icon-cart-4 v-if="show" class="chart" />
+      <div style="margin-right: 20px">
+        <b-icon-cart-4 v-if="show" class="chart" />
+        <b-badge v-if="productCount > 0" variant="light" >{{ productCount }}</b-badge>
+      </div>
     </transition>
   </div>
 </template>
 
 <script>
-import { BIconCart4 } from "bootstrap-vue";
 export default {
-  components: {
-    BIconCart4,
-  },
+  props: ["productCount"],
   data() {
     return {
       show: true,
@@ -30,10 +30,8 @@ export default {
   justify-content: space-between;
   align-items: center;
 }
-
 .chart {
   font-size: 30px;
-  margin-right: 20px;
 }
 
 .move-enter-active {
