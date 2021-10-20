@@ -1,40 +1,40 @@
 <template>
-    <b-card no-body class="overflow-hidden" style="max-width: 540px;">
+    <b-card no-body class="overflow-hidden card-shadow" style="max-width: 540px;">
     <b-row no-gutters>
-      <b-col md="6">
-        <b-card-img src="https://picsum.photos/400/400/?image=20" alt="Image" class="rounded-0"></b-card-img>
+      <b-col md="6" class="d-flex align-items-center">
+        <b-card-img src="https://png.pngitem.com/pimgs/s/244-2441637_campus-shoes-png-transparent-png.png" alt="Image" class="rounded-0"></b-card-img>
       </b-col>
       <b-col md="6">
-        <b-card-body title="Horizontal Card">
+        <b-card-body>
+          <b-card-text>{{ product.category }}</b-card-text>
+          <b-card-title title-tag="h4">{{product.name}}</b-card-title>
+          <b-card-title title-tag="h1">${{product.price}}</b-card-title>
           <b-card-text>
-            This is a wider card with supporting text as a natural lead-in to additional content.
-            This content is a little bit longer.
+            {{ product.description }}
           </b-card-text>
+          <b-form-rating id="rating-10" :value="product.rating" :stars="5" size="sm" no-border readonly></b-form-rating>
         </b-card-body>
       </b-col>
-      <b-col md="12">
-          <b-form-group
-      v-slot="{ ariaDescribedby }"
-    >
-      <b-form-radio-group
-        id="btn-radios-group"
-        class="hidden-radio"
-        v-model="selected"
-        :options="options"
-        :aria-describedby="ariaDescribedby"
-        button-variant="outline-primary"
-        size="md"
-        name="radio-btn-outline"
-        buttons
-      ></b-form-radio-group>
-    </b-form-group>
+      <b-col md="6">
+        <b-form-radio-group
+              :options="product.sizes"
+              v-model="checkedSize"
+              buttons
+              button-variant="success"
+            ></b-form-radio-group>
+      </b-col>
+      <b-col md="1">
+        <b-form-select v-model="selectedCount" :options="countOptions" size="lg" class="select-count"></b-form-select>
+      </b-col>
+      <b-col md="5">
+        <b-button>ADD TO BASKET</b-button>
       </b-col>
     </b-row>
   </b-card>
 </template>
 
 <script>
-import {BCard, BRow, BCol, BCardBody, BCardText, BFormGroup, BFormRadioGroup,} from 'bootstrap-vue'
+import {BCard, BRow, BCol, BCardBody, BCardText, BFormSelect, BButton, BCardTitle, BFormRating, BFormRadioGroup} from 'bootstrap-vue'
 export default {
     components: {
         BCard,
@@ -42,27 +42,36 @@ export default {
         BCol,
         BCardBody,
         BCardText,
-        BFormGroup,
+        BFormSelect,
+        BButton,
+        BCardTitle,
+        BFormRating,
         BFormRadioGroup,
+    },
+    props: {
+      product: {
+        type: Object,
+        required: true,
+      }
     },
     data() {
       return {
         selected: 'radio1',
-        options: [
-          { text: '38', value: '38' },
-          { text: '39', value: '39' },
-          { text: '40', value: '40' },
-          { text: '41', value: '41' },
-          { text: '42', value: '42' },
-          { text: '43', value: '43' },
-        ]
+        selectedCount: 1,
+        countOptions: [1, 2, 3, 4, 5, 6, 7, 8 , 9, 10],
+        checkedSize: null,
       }
     }
 }
 </script>
 
 <style scoped>
-.hidden-radio label input[type = "radio"] {
-    display: none;
+.card-shadow {
+  box-shadow: 0px 0px 5px #888888;
+}
+
+.select-count {
+  border: none;
+  outline: none;
 }
 </style>
