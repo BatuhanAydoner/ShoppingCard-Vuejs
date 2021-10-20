@@ -37,8 +37,7 @@ export default {
 }
 
 .move-enter-active {
-  animation: move-chart 3s;
-  animation-delay: 1s;
+  animation: move-chart 2s;
 }
 @keyframes move-chart {
   0% {
