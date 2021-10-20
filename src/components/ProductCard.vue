@@ -18,6 +18,7 @@
       <b-col md="6">
         <b-form-radio-group
               :options="product.sizes"
+              class="general"
               v-model="checkedSize"
               buttons
               button-variant="success"
@@ -34,20 +35,7 @@
 </template>
 
 <script>
-import {BCard, BRow, BCol, BCardBody, BCardText, BFormSelect, BButton, BCardTitle, BFormRating, BFormRadioGroup} from 'bootstrap-vue'
 export default {
-    components: {
-        BCard,
-        BRow,
-        BCol,
-        BCardBody,
-        BCardText,
-        BFormSelect,
-        BButton,
-        BCardTitle,
-        BFormRating,
-        BFormRadioGroup,
-    },
     props: {
       product: {
         type: Object,
@@ -65,7 +53,7 @@ export default {
 }
 </script>
 
-<style scoped>
+<style>
 .card-shadow {
   box-shadow: 0px 0px 5px #888888;
 }
@@ -73,5 +61,15 @@ export default {
 .select-count {
   border: none;
   outline: none;
+}
+
+.general {
+  position: relative;
+  gap: 5px;
+}
+
+.general label input {
+  visibility: hidden !important;
+  position: absolute !important;
 }
 </style>
