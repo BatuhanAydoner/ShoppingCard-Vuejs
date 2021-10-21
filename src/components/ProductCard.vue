@@ -1,5 +1,5 @@
 <template>
-  <b-card no-body class="overflow-hidden card-shadow" style="max-width: 540px">
+  <b-card no-body class="overflow-hidden product-card" style="max-width: 580px">
     <b-row no-gutters>
       <b-col md="6" class="d-flex align-items-center">
         <b-card-img
@@ -35,15 +35,15 @@
           button-variant="success"
         ></b-form-radio-group>
       </b-col>
-      <b-col md="1">
+      <b-col md="2">
         <b-form-select
           v-model="selectedCount"
           :options="countOptions"
-          size="lg"
+          size="sm"
           class="select-count"
         ></b-form-select>
       </b-col>
-      <b-col md="5">
+      <b-col md="4">
         <b-button @click="addToChart">ADD TO BASKET</b-button>
       </b-col>
     </b-row>
@@ -79,13 +79,16 @@ export default {
         image: this.product.image,
       };
       this.$emit("add-to-chart", newProduct);
+      this.selectedSize = null
     },
   },
 };
 </script>
 
 <style>
-.card-shadow {
+.product-card {
+  padding: 1rem;
+  border: 1px solid #888888 !important;
   box-shadow: 0px 0px 5px #888888;
 }
 

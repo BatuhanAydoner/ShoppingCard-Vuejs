@@ -1,6 +1,6 @@
 <template>
   <div id="app">
-    <main-header :productCount="selectedProducts.length" />
+    <main-header :productCount="productCount" />
     <product-card
       v-for="(product, i) in allProducts"
       :key="i"
@@ -25,6 +25,7 @@ export default {
     return {
       allProducts: [...products],
       selectedProducts: [],
+      productCount: 0,
     };
   },
   methods: {
@@ -38,6 +39,7 @@ export default {
       } else {
         this.selectedProducts.push(product);
       }
+      this.productCount += product.piece;
     },
   },
 };
