@@ -1,5 +1,6 @@
 <template>
   <div id="app">
+    <toast message="Sepetinize ürün eklendi." :show.sync="showToast" />
     <main-header
       :productCount="productCount"
       :is-products-dialog-active.sync="isProductsDialogActive"
@@ -28,6 +29,7 @@
 import MainHeader from "./components/MainHeader.vue";
 import ProductCard from "./components/ProductCard.vue";
 import ProductsDialog from "./components/ProductsDialog.vue";
+import Toast from "./components/Toast.vue";
 import products from "./products";
 
 export default {
@@ -36,6 +38,7 @@ export default {
     MainHeader,
     ProductCard,
     ProductsDialog,
+    Toast,
   },
   data() {
     return {
@@ -43,6 +46,7 @@ export default {
       selectedProducts: [],
       productCount: 0,
       isProductsDialogActive: false,
+      showToast: false,
     };
   },
   methods: {
@@ -67,6 +71,7 @@ export default {
         this.selectedProducts.push(product);
       }
       this.productCount += product.piece;
+      this.showToast = true;
     },
     increment(product, number) {
       const size = product.sizes.find((item) => item.number === number);
