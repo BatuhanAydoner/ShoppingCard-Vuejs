@@ -1,10 +1,10 @@
 <template>
   <div class="header">
-    <h1>BatuExpress</h1>
+    <h1>MR. BA</h1>
     <transition name="move" appear>
-      <div style="margin-right: 20px">
+      <div style="margin-right: 20px" @click="openDialog">
         <b-icon-cart-4 v-if="show" class="chart" />
-        <b-badge v-if="productCount > 0" variant="light" >{{ productCount }}</b-badge>
+        <b-badge v-if="productCount > 0" variant="light">{{ productCount }}</b-badge>
       </div>
     </transition>
   </div>
@@ -17,6 +17,11 @@ export default {
     return {
       show: true,
     };
+  },
+  methods: {
+    openDialog() {
+      this.$emit("update:is-products-dialog-active", true);
+    },
   },
 };
 </script>
