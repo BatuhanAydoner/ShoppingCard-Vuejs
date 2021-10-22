@@ -44,12 +44,15 @@ export default {
     },
   },
   methods: {
+    // Emit given product and numbe to increase current shoe piece.
     increment(product, number) {
       this.$emit("increment", product, number);
     },
+    // Emit given product and numbe to decrease current shoe piece.
     decrement(product, number) {
       this.$emit("decrement", product, number);
     },
+    // Close this dialog.
     closeDialog() {
       this.$emit("closedDialog", false);
     },

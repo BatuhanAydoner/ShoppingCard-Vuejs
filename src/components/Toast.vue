@@ -8,11 +8,13 @@
 export default {
   props: ["message", "show"],
   computed: {
+    // Return given prop show.
     showToast() {
       return this.show;
     },
   },
   watch: {
+    // Started a timeout to close toast when show is true.
     show() {
       setTimeout(() => {
         this.$emit("update:show", false);

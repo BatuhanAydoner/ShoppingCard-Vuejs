@@ -19,6 +19,7 @@ export default {
     };
   },
   methods: {
+    // Emit true to show products dialog.
     openDialog() {
       this.$emit("update:is-products-dialog-active", true);
     },
@@ -30,7 +31,7 @@ export default {
 .header {
   width: 100%;
   height: 50px;
-  background: rgb(111, 111, 255);
+  background: orange;
   display: flex;
   justify-content: space-between;
   align-items: center;

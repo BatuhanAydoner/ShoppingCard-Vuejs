@@ -77,12 +77,13 @@ export default {
   },
   data() {
     return {
-      selectedSize: this.product.sizes[0].value,
-      selectedCount: 1,
-      countOptions: [1, 2, 3, 4, 5, 6, 7, 8, 9, 10],
+      selectedSize: this.product.sizes[0].value, // Choosen size.
+      selectedCount: 1, // Choosen piece.
+      countOptions: [1, 2, 3, 4, 5, 6, 7, 8, 9, 10], // Numbers of piece.
     };
   },
   computed: {
+    // Calculate shoe' s price with product price, index of selectedSize at sizes array of product and selectedCount.
     price() {
       let indexOfSize = this.product.sizes
         .map((item) => item.value)
@@ -94,6 +95,7 @@ export default {
     },
   },
   methods: {
+    // Emit a new product or updated product.
     addToChart() {
       let indexOfSize = this.product.sizes
         .map((item) => item.value)
@@ -114,6 +116,7 @@ export default {
       this.$emit("add-to-chart", newProduct);
       this.resetSelections();
     },
+    // Given first valeus to selectCount and selectedSize.
     resetSelections() {
       this.selectedCount = 1;
       this.selectedSize = this.product.sizes[0].value;

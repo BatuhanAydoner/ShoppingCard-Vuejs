@@ -11,7 +11,7 @@
           v-for="(product, i) in allProducts"
           :key="i"
           :product="product"
-          @add-to-chart="addToChart"
+          @add-to-chart="addToChard"
         />
       </b-row>
       <products-dialog
@@ -42,15 +42,16 @@ export default {
   },
   data() {
     return {
-      allProducts: [...products],
-      selectedProducts: [],
-      productCount: 0,
-      isProductsDialogActive: false,
-      showToast: false,
+      allProducts: [...products], // All products from json file.
+      selectedProducts: [], // Selected products list.
+      productCount: 0, // Total selected product count.
+      isProductsDialogActive: false, // Show or hide product dialog.
+      showToast: false, // Showed when any product is added.
     };
   },
   methods: {
-    addToChart(product) {
+    // Add products to list
+    addToChard(product) {
       let sameProduct = this.selectedProducts.find((item) => item.id === product.id);
       if (sameProduct) {
         const findedSize = sameProduct.sizes.find(
@@ -73,11 +74,13 @@ export default {
       this.productCount += product.piece;
       this.showToast = true;
     },
+    // Increase given product' s piece.
     increment(product, number) {
       const size = product.sizes.find((item) => item.number === number);
       size.piece += 1;
       this.productCount += 1;
     },
+    // Decrease given product' s piece.
     decrement(product, number) {
       const size = product.sizes.find((item) => item.number === number);
       size.piece -= 1;
@@ -92,6 +95,7 @@ export default {
         );
       }
     },
+    // Close products dialog.
     closedDialog() {
       this.isProductsDialogActive = false;
     },
