@@ -47,14 +47,27 @@ export default {
     },
   },
   methods: {
-    // Emit given product and numbe to increase current shoe piece.
+    /**
+     * Emit given product and number to increase current shoe piece.
+     * @param {Object} product - Product at products given as props.
+     * @param {Number} number - Size at given product' s sizes
+     */
     increment(product, number) {
       this.$emit("increment", product, number);
     },
-    // Emit given product and numbe to decrease current shoe piece.
+    /**
+     * Emit given product and number to decrease current shoe piece.
+     * @param {Object} product - Product at products given as props.
+     * @param {Number} number - Size at given product' s sizes
+     */
     decrement(product, number) {
       this.$emit("decrement", product, number);
     },
+    /**
+     * Emit given product and number to delete current product.
+     * @param {Object} product - Product at products given as props.
+     * @param {Number} number - Size at given product' s sizes
+     */
     deleteShoe(product, number) {
       this.$emit("delete-shoe", product, number);
     },

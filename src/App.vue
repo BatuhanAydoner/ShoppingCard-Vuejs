@@ -31,7 +31,7 @@ import MainHeader from "./components/MainHeader.vue";
 import ProductCard from "./components/ProductCard.vue";
 import ProductsDialog from "./components/ProductsDialog.vue";
 import Toast from "./components/Toast.vue";
-import products from "./products";
+import products from "./data/products";
 
 export default {
   name: "App",
@@ -51,7 +51,10 @@ export default {
     };
   },
   methods: {
-    // Add products to list
+    /**
+     * Add products to list
+     * @param {Object} product - Product at selectedProducts array
+     */
     addToChard(product) {
       let sameProduct = this.selectedProducts.find((item) => item.id === product.id);
       if (sameProduct) {
@@ -75,13 +78,21 @@ export default {
       this.productCount += product.piece;
       this.showToast = true;
     },
-    // Increase given product' s piece.
+    /**
+     *   Increase given product' s piece.
+     *   @param {Object} product - Product at selectedProducts array
+     *   @param {Number} number - Size at given product' s sizes
+     */
     increment(product, number) {
       const size = product.sizes.find((item) => item.number === number);
       size.piece += 1;
       this.productCount += 1;
     },
-    // Decrease given product' s piece.
+    /**
+     *   Decrease given product' s piece.
+     *   @param {Object} product - Product at selectedProducts array
+     *   @param {Number} number - Size at given product' s sizes
+     */
     decrement(product, number) {
       const size = product.sizes.find((item) => item.number === number);
       size.piece -= 1;
@@ -96,7 +107,15 @@ export default {
         );
       }
     },
+    /**
+     *   Delete shoe from given product
+     *   @param {Object} product - Product at selectedProducts array
+     *   @param {Number} number - Size at given product' s sizes
+     */
     deleteShoe(product, number) {
+      this.productCount -= parseInt(
+        product.sizes.find((item) => item.number === number).piece
+      );
       product.sizes = product.sizes.filter((item) => item.number !== number);
       if (product.sizes.length === 0) {
         this.selectedProducts = this.selectedProducts.filter(

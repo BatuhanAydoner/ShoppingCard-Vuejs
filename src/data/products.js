@@ -4,7 +4,7 @@ export default [
     name: "Nike Epic React Flyknit",
     piece: 1,
     price: 200,
-    image: require("./assets/images/shoe1.jpg"),
+    image: require("../assets/images/shoe1.jpg"),
     color: "pink",
     description:
       "The Nike Epic React Flyknit is The best running shoe in the world. You have to try.",
@@ -24,7 +24,7 @@ export default [
     name: "Nike Epic React Flyknit",
     piece: 1,
     price: 200,
-    image: require("./assets/images/shoe2.jpg"),
+    image: require("../assets/images/shoe2.jpg"),
     color: "blue",
     description:
       "The Nike Epic React Flyknit is The best running shoe in the world. You have to try.",
@@ -44,7 +44,7 @@ export default [
     name: "Nike Epic Vue Flyknit",
     piece: 1,
     price: 200,
-    image: require("./assets/images/shoe2.jpg"),
+    image: require("../assets/images/shoe2.jpg"),
     color: "blue",
     description:
       "The Nike Epic Vue Flyknit is The best running shoe in the world. You have to try.",
@@ -64,7 +64,7 @@ export default [
     name: "Nike Epic Vue Flyknit",
     piece: 1,
     price: 200,
-    image: require("./assets/images/shoe1.jpg"),
+    image: require("../assets/images/shoe1.jpg"),
     color: "pink",
     description:
       "The Nike Epic Vue Flyknit is The best running shoe in the world. You have to try.",
