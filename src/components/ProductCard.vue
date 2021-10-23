@@ -7,7 +7,7 @@
   >
     <b-row no-gutters>
       <b-col md="6" class="d-flex align-items-center">
-        <b-card-img :src="product.image" alt="Image" class="rounded-0"></b-card-img>
+        <b-card-img :src="product.image" alt="Image" class="rounded-0 product-img"></b-card-img>
       </b-col>
       <b-col md="6">
         <b-card-body>
@@ -130,6 +130,10 @@ export default {
   padding: 1rem;
   border: 1px solid #888888 !important;
   box-shadow: 0px 0px 5px #888888;
+}
+
+.product-img:hover {
+  transform: scale(1.1);
 }
 
 .select-count {
