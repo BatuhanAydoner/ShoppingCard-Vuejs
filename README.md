@@ -1,24 +1,16 @@
-# reengen-bootcamp-project-1
+# ShoppingCard - Vuejs
 
-## Project setup
-```
-npm install
-```
+This is a mini vuejs project.
 
-### Compiles and hot-reloads for development
-```
-npm run serve
-```
+Demo website: 
+https://shopping-card-vuejs.vercel.app/
 
-### Compiles and minifies for production
-```
-npm run build
-```
+<img src="https://github.com/BatuhanAydonerDev/ShoppingCard-Vuejs/blob/master/project.gif?raw=true" alt="Github Finder - VUEJS" width="600" />
 
-### Lints and fixes files
-```
-npm run lint
-```
+## About The Project
+- [x] Component Structure
+- [x] Responsive design
+- [x] Bootstrap-vue
 
-### Customize configuration
-See [Configuration Reference](https://cli.vuejs.org/config/).
+## Used Libraries
+- [Bootstrap-vue](https://bootstrap-vue.org/)
