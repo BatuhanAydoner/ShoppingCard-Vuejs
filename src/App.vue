@@ -19,6 +19,7 @@
         :products="selectedProducts"
         @increment="increment"
         @decrement="decrement"
+        @delete-shoe="deleteShoe"
         @closedDialog="closedDialog"
       />
     </b-container>
@@ -89,6 +90,14 @@ export default {
       if (size.piece === 0) {
         product.sizes = product.sizes.filter((item) => item.number !== size.number);
       }
+      if (product.sizes.length === 0) {
+        this.selectedProducts = this.selectedProducts.filter(
+          (item) => item.id !== product.id
+        );
+      }
+    },
+    deleteShoe(product, number) {
+      product.sizes = product.sizes.filter((item) => item.number !== number);
       if (product.sizes.length === 0) {
         this.selectedProducts = this.selectedProducts.filter(
           (item) => item.id !== product.id

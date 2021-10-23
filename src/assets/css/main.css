@@ -27,6 +27,12 @@
   margin: 5px;
 }
 
+.btn-delete {
+  border: 1px solid black;
+  background: transparent;
+  margin: 5px;
+}
+
 @media only screen and (max-width: 767px) {
   .mt {
     margin-top: 10px;

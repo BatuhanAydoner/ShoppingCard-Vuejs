@@ -23,6 +23,9 @@
             <button class="btn-increment" @click="increment(product, size.number)">
               +
             </button>
+            <button class="btn-delete" @click="deleteShoe(product, size.number)">
+              <b-icon-trash></b-icon-trash>
+            </button>
           </div>
         </div>
         <hr />
@@ -51,6 +54,9 @@ export default {
     // Emit given product and numbe to decrease current shoe piece.
     decrement(product, number) {
       this.$emit("decrement", product, number);
+    },
+    deleteShoe(product, number) {
+      this.$emit("delete-shoe", product, number);
     },
     // Close this dialog.
     closeDialog() {

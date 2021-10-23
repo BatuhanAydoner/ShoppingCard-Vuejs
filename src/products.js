@@ -47,9 +47,9 @@ export default [
     image: require("./assets/images/shoe2.jpg"),
     color: "blue",
     description:
-      "The Nike Epic React Flyknit is The best running shoe in the world. You have to try.",
+      "The Nike Epic Vue Flyknit is The best running shoe in the world. You have to try.",
     category: "Woman Running Shoe",
-    rating: 4,
+    rating: 3,
     sizes: [
       { text: "38", value: "38" },
       { text: "39", value: "39" },
@@ -67,9 +67,9 @@ export default [
     image: require("./assets/images/shoe1.jpg"),
     color: "pink",
     description:
-      "The Nike Epic React Flyknit is The best running shoe in the world. You have to try.",
+      "The Nike Epic Vue Flyknit is The best running shoe in the world. You have to try.",
     category: "Running Shoe",
-    rating: 4,
+    rating: 5,
     sizes: [
       { text: "38", value: "38" },
       { text: "39", value: "39" },

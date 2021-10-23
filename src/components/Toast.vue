@@ -1,5 +1,9 @@
 <template>
-  <div class="toast" :style="{ display: showToast ? 'flex' : 'none' }">
+  <div
+    class="toast"
+    :style="{ display: showToast ? 'flex' : 'none' }"
+    @click="$emit('update:show', false)"
+  >
     {{ message }}
   </div>
 </template>
