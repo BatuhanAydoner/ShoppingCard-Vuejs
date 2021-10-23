@@ -1,6 +1,6 @@
 <template>
   <div class="header">
-    <h1>MR. BA</h1>
+    <h1>ShoppingCard - Vue.js</h1>
     <transition name="move" appear>
       <div style="margin-right: 20px" @click="openDialog">
         <b-icon-cart-4 v-if="show" class="chart" />
